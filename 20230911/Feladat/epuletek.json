@@ -1,0 +1,64 @@
+[{
+        "name": "A Burj Khalifa – Dubaj tornya",
+        "rank": 1,
+        "title": "1. A Burj Khalifa – Dubaj tornya",
+        "imgSrc": "BurjKhalifa_1.jpg",
+        "desc": "Az arab felhőkarcoló a maga 829,8 méterével jelenleg az emberi kéz alkotta legmagasabb épület a világon. Az építési költségei mintegy 1,5 milliárd USA dollárt kóstálnak, 900 lakás található benne, és még csak a fele kelt el – tehát lehet a költözésen gondolkozni. Az épület egy csodálatos park kellős közepén magasodik, és a tetején természetesen kilátó is van."
+    },
+    {
+        "name": "Makkah Royal Clock Tower Hotel – Szaúd-Arábia legmagasabbja",
+        "rank": 2,
+        "title": "2. Makkah Royal Clock Tower Hotel – Szaúd-Arábia legmagasabbja",
+        "imgSrc": "Makkah_2.jpg",
+        "desc": "A 600 méter magas hotel Szaúd-Arábiában, Mekka városában található, és az épületegyüttes egyben a legnagyobb óratorony is a világon. A fellegvár egy domb tetején áll, ahonnan tökéletes kilátás nyílik a  híres Nagy Mecsetre. A torony tetején található hatalmas óra már az épülettől huszonöt kilométernyire kirajzolódik a távolban."
+    },
+    {
+        "name": "One World Trade Center – New York új büszkesége",
+        "rank": 3,
+        "title": "3. One World Trade Center – New York új büszkesége",
+        "imgSrc": "OneWTC_3.jpg",
+        "desc": "A 104 emeletes felhőkarcoló pontosan a 2001. szeptember 11-én leomlott elődje helyére épült, és 541 méteres magasságával a város új büszkesége. Az utolsó építési elemet a napokban kapta meg a torony, amely hamarosan megnyílik a közönség számára is. Az alkotók nagyon fontosnak tartották, hogy a One World Trade Center az eredeti torony hangulatát idézze."
+    },
+    {
+        "name": "Taipei 101 – Tajvan szeme",
+        "rank": 4,
+        "title": "4. Taipei 101 – Tajvan szeme",
+        "imgSrc": "Taipei101_4.jpg",
+        "desc": "Az 509 méteres Taipei 101 Tajvan legjelentőségteljesebb felhőkarcolója, és nemcsak a méretei miatt, hanem azért is, mert ez egy igazi zöld épület. A fűtést és az áramszolgáltatást egyaránt természetes forrásokból oldják meg, így a kivitelezés számos díjat is bezsebelt. Az épület különlegessége, hogy a 101 emeletből 5 a föld alatt található."
+    },
+    {
+        "name": "Shanghai World Financial Center – Kína neves felhőkarcolója",
+        "rank": 5,
+        "title": "5. Shanghai World Financial Center – Kína neves felhőkarcolója",
+        "imgSrc": "Shanghai_5.jpg",
+        "desc": "Az 5 éve épült felhőkarcoló 492 méter magas. Irodák, szálloda, konferenciatermek, lakások és üzletközpont, kilátó és múzeum is található benne, összesen 87 szinten. Persze van rengeteg vendéglátóegység is, tehát maga az épület olyan, akár egy miniváros, és nem is annyira mini!"
+    },
+    {
+        "name": "International Commerce Centre – Hongkong kereskedelmi palotája",
+        "rank": 6,
+        "title": "6. International Commerce Centre – Hongkong kereskedelmi palotája",
+        "imgSrc": "ICC_6.jpg",
+        "desc": "Hongkong ICC Towere 484 méter magasra nőtt ki a földből, és a kereskedelem ottani palotája. Van benne bevásárlóközpont, bankok, szálloda elnöki lakosztállyal, és az épület tetején található a világ legnagyobb úszómedencéje, természetesen minden igényt kielégítő bárral és étteremmel együtt. Az expresszliftek alig egy perc alatt érnek a földszintről a 103. emeletre!"
+    },
+    {
+        "name": "Petronas Tower 1–2. – Kuala Lumpur ikrei",
+        "rank": 7,
+        "title": "7–8. Petronas Tower 1–2. – Kuala Lumpur ikrei",
+        "imgSrc": "Petronas_7.jpg",
+        "desc": "A maláj fővárosban épültek a 452 méter magas Petronas-tornyok, amelyek méreteikkel korábban éveken át birtokolták a világ legmagasabb épületei címet. A 88 emeletes tornyok motívumai tükrözik az iszlám művészetet és a muszlim vallást. Az irodák és bevásárlóközpontok mellett az épületek otthont adnak a híres maláj hangversenyteremnek is."
+    },
+    {
+        "name": "Zifeng Tower – Kína csillagvizsgálója",
+        "rank": 9,
+        "title": "9. Zifeng Tower – Kína csillagvizsgálója",
+        "imgSrc": "Zifeng_9.jpg",
+        "desc": "450 méter magas a torony, így nem csoda, hogy még csillagvizsgálót is építettek a tetejére. A 89 emeletes épület alsóbb szintjein irodák és kereskedelmi központ található, az éghez közelebb érve pedig a szórakoztató részlegbe jutunk, ahol számos étterem, bár, mozi és egyéb lehetőségek várnak."
+    },
+    {
+        "name": "Willis Tower – Chicago megmászható magassága",
+        "rank": 10,
+        "title": "10. Willis Tower – Chicago megmászható magassága",
+        "imgSrc": "Willis_10.jpg",
+        "desc": "A Willis Tower 25 éven át őrizte a világ legmagasabb épülete címet, és az Egyesült Államokban ilyen téren ma is előkelő helyen áll. Chicago leglátogatottabb turisztikai központja, ahol több mint egymillió ember fordul meg évente. Az épülettel kapcsolatban világhírű eset, hogy egyszer (tapadókorongok segítségével) sikeresen megmászta egy magát pókembernek képzelő férfi."
+    }
+]

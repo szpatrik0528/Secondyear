@@ -1,0 +1,9 @@
+body{
+    background-color: rgb(91, 163, 196);
+}
+
+.card{
+    float: left;
+    margin: 5px auto;
+    border-radius: 0;
+}
