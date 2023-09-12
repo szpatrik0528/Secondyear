@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(97, 154, 172);
+}
+table{
+    color: black;
+    border: solid 4px black;
+    border-spacing: 5px;
+}
+
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+th,td,tr{
+    border: 2px solid black;
+    font-size: x-large;
+    text-align: center;
+    background-color: aqua;
+}
+td {
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    font-size: x-large;
+}
