@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    width: 1920px;
+    height: 1080px;
+    display: inline-flex;
+    position: relative;
+}
+
+img {
+    max-width: 100px;
+    max-height: 100px;
+    position: absolute;
+    animation: rotate 10s linear infinite;
+}
+
+button{
+    size: 20px;;
+}
