@@ -10,18 +10,3 @@ if (true) {
 }
 
 console.log(_var1, _let1, _const1, _let2);
-
-
-function mutasdSzinesKepe() {
-    const feketeFeherKepElem = document.getElementById('feketeFeherKep');
-    
-    const szinesKepElem = new Image();
-    szinesKepElem.src = 'szines.jpg'; 
-    szinesKepElem.alt = 'Színes kép';
-    
-    feketeFeherKepElem.parentNode.replaceChild(szinesKepElem, feketeFeherKepElem);
-  }
-  
-  
-  
-  
