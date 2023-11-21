@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 button{
     font-size: 5vw;
     border-style: 1px solid red;
 }
 body{
     background-color: rgb(158, 82, 82);
+=======
+button{
+    font-size: 5vw;
+    border-style: 1px solid red;
+}
+body{
+    background-color: rgb(158, 82, 82);
+>>>>>>> 6d4d05ec0ab675e636dff503e46415f0b3fcc633
 }
