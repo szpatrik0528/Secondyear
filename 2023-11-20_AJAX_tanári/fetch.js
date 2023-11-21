@@ -69,7 +69,7 @@ buttonCreate.addEventListener("click", async () => {
             headers: {
                 "Content-Type" : "application/json"
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(data)
         });
         const user = await response.json();
         beviteliMezoAlaphelyzetbe();
@@ -111,7 +111,7 @@ buttonUpdate.addEventListener("click", async () => {
             headers: {
                 "Content-Type" : "application/json"
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(data)
         });
         const user = await response.json();
         beviteliMezoAlaphelyzetbe();
