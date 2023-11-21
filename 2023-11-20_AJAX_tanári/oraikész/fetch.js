@@ -81,8 +81,8 @@ buttonCreate.addEventListener("click", async () => {
 });
 
 //-- user törlés ----------------------------------------------------------------
-buttonCreate.addEventListener("click", async () => {
-    let url = `https://retoolapi.dev/Hfa9uy/data`;
+buttonDelete.addEventListener("click", async () => {
+    let url = `https://retoolapi.dev/Hfa9uy/data/${inputid.value}`;
     try {
         const response = await fetch(url, {
             method: "DELETE",
@@ -99,8 +99,8 @@ buttonCreate.addEventListener("click", async () => {
 });
 
 //-- user update ----------------------------------------------------------------
-buttonCreate.addEventListener("click", async () => {
-    let url = `https://retoolapi.dev/Hfa9uy/data`;
+buttonUpdate.addEventListener("click", async () => {
+    let url = `https://retoolapi.dev/Hfa9uy/data/${inputid.value}`;
     let data = {
         username: inputUsername.value,
         darab: inputDarab.value
