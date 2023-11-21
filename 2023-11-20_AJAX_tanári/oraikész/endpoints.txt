@@ -1,0 +1,10 @@
+Endpoint URL : https://retoolapi.dev/Hfa9uy/data
+
+GET 		    /Hfa9uy/data
+GET filter	    /Hfa9uy/data?username=value
+GET by id	    /Hfa9uy/data/1
+GET paginate	/Hfa9uy/data?_page=2&_limit=10
+POST		    /Hfa9uy/data
+PUT		        /Hfa9uy/data/1
+PATCH		    /Hfa9uy/data/1
+DELETE		    /Hfa9uy/data/1

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX fetch() API demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css"
+        integrity="sha512-72OVeAaPeV8n3BdZj7hOkaPSEk/uwpDkaGyP4W2jSzAC8tfiO4LMEDWoL3uFp5mcZu+8Eehb4GhZWFwvrss69Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.min.js"
+        integrity="sha512-eHx4nbBTkIr2i0m9SANm/cczPESd0DUEcfl84JpIuutE6oDxPhXvskMR08Wmvmfx5wUpVjlWdi82G5YLvqqJdA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" id="formEleje">
+            <div class="row">
+                <div class="form-group col-3">
+                    <label for="id" class="form-label">id</label>
+                    <input type="text" class="form-control" id="id" readonly>
+                </div>
+                <div class="form-group col-6">
+                    <label for="username" class="form-label">name</label>
+                    <input type="text" class="form-control" id="username">
+                </div>
+                <div class="form-group col-3">
+                    <label for="darab" class="form-label">darab</label>
+                    <input type="number" class="form-control" id="darab" min="1" value="1">
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn btn-outline-warning m-2" id="create">CREATE</button>
+                <button class="btn btn-outline-primary m-2" id="read">READ</button>
+                <button class="btn btn-outline-success m-2" id="update">UPDATE</button>
+                <button class="btn btn-outline-danger m-2" id="delete">DELETE</button>
+            </div>
+        </form>
+        <div id="cards" class="row"></div>
+    </div>
+    <script src="fetch.js"></script>
+</body>
+
+</html>
