@@ -1,0 +1,7 @@
+node -v
+npm init
+npm install -g npm@10.2.4
+npm install express
+node index.js
+npm i body-parser
+npm i cors

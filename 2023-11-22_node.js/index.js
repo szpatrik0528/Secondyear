@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express(); //-- http szervert tudunk vele indítani
 const bodyParser = require('body-parser');
+//-- Átírányitások miatt használjuk
+const cors = require('cors');
+app.use(cors());
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false}))
 
