@@ -1,0 +1,40 @@
+img{
+    width:auto;
+    height:auto;
+}
+header{
+    background-color: #EB6160;
+}
+p{
+    text-align: right;
+    margin: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+table{
+    width: 1000px;
+}
+th, tr{
+}
+#oszlop1{
+    width: 200px;
+}
+#oszlop2{
+    width: 600px;
+}
+#oszlop3{
+    width: 200px;
+}
+#kep{
+    width: 190px;
+    border: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.center{
+    margin-right: auto;
+    margin-left: auto;
+}
+h1{
+    text-align: right;
+}

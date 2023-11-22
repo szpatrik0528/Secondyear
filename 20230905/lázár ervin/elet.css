@@ -1,0 +1,26 @@
+html{
+    background-color: white;
+}
+h1{
+    color: #EB6160; 
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+p{
+    color:#0E0E0E;
+}
+body{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+div{
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2{
+    font-size: 17px;
+    color: #EB6160; 
+}
