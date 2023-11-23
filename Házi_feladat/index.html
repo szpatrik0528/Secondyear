@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ügyfélkezelő Rendszer</title>
+</head>
+<body>
+  <h1>Ügyfélkezelő Rendszer</h1>
+
+  <!-- Ügyfelek listázása -->
+  <h2>Összes ügyfél</h2>
+  <ul id="clientList"></ul>
+
+  <!-- Új ügyfél hozzáadása form -->
+  <h2>Új ügyfél hozzáadása</h2>
+  <form id="addClientForm">
+    <label for="name">Név:</label>
+    <input type="text" id="name" required>
+    <label for="membershipFee">Tagdíj:</label>
+    <input type="number" id="membershipFee" required>
+    <button type="submit">Hozzáadás</button>
+  </form>
+
+  <!-- Ügyfél törlése form -->
+  <h2>Ügyfél törlése</h2>
+  <form id="deleteClientForm">
+    <label for="clientIdToDelete">Ügyfél ID:</label>
+    <input type="number" id="clientIdToDelete" required>
+    <button type="submit">Törlés</button>
+  </form>
+
+  <!-- Ügyfél adatainak módosítása form -->
+  <h2>Ügyfél adatainak módosítása</h2>
+  <form id="updateClientForm">
+    <label for="clientIdToUpdate">Ügyfél ID:</label>
+    <input type="number" id="clientIdToUpdate" required>
+    <label for="updatedName">Új név:</label>
+    <input type="text" id="updatedName" required>
+    <label for="updatedMembershipFee">Új tagdíj:</label>
+    <input type="number" id="updatedMembershipFee" required>
+    <button type="submit">Módosítás</button>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+</html>

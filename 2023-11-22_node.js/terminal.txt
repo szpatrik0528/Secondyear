@@ -1,7 +1,7 @@
-node -v
-npm init
-npm install -g npm@10.2.4
-npm install express
-node index.js
-npm i body-parser
-npm i cors
+node -v  //verzió check
+npm init 
+npm install -g npm@10.2.4 //verzió frissítés
+npm install express //expess letöltés
+node index.js //program indítás
+npm i body-parser //body-parser letöltés
+npm i cors //cors letöltés
