@@ -14,7 +14,6 @@ let clients = []; // Adatbázis szimulációja
 app.get('/clients', (req, res) => {
   res.json(clients);
 });
-
 // Egy adott ügyfél lekérdezése
 app.get('/clients/:id', (req, res) => {
   const clientId = req.params.id;
