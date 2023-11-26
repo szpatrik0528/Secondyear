@@ -1,91 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend és Backend</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css"
-        integrity="sha512-72OVeAaPeV8n3BdZj7hOkaPSEk/uwpDkaGyP4W2jSzAC8tfiO4LMEDWoL3uFp5mcZu+8Eehb4GhZWFwvrss69Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.min.js"
-        integrity="sha512-eHx4nbBTkIr2i0m9SANm/cczPESd0DUEcfl84JpIuutE6oDxPhXvskMR08Wmvmfx5wUpVjlWdi82G5YLvqqJdA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <meta charset="UTF-8">
+  <title>User Management</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-        <h1>Ügyfélkezelés</h1>
-        
-        <button id="getAllCustomers">Összes ügyfél lekérdezése</button>
-        <button id="getSingleCustomer">Egy adott ügyfél lekérdezése</button>
-      
-        <h2>Új ügyfél hozzáadása</h2>
-        <form id="newCustomerForm">
-          <label for="azon">Azonosító:</label>
-          <input type="text" id="azon" name="azon"><br><br>
-          <label for="nev">Név:</label>
-          <input type="text" id="nev" name="nev"><br><br>
-          <button type="submit">Mentés</button>
-        </form>
-      
-        <div id="customerData">
-          <!-- Ide kerülnek az ügyfelek adatai -->
-        </div>
-        <script>
-            // AJAX kérések elküldése Node.js szervernek
-            const getAllCustomersBtn = document.getElementById('getAllCustomers');
-            const getSingleCustomerBtn = document.getElementById('getSingleCustomer');
-            const newCustomerForm = document.getElementById('newCustomerForm');
-            const customerDataDiv = document.getElementById('customerData');
-        
-            getAllCustomersBtn.addEventListener('click', async () => {
-              const response = await fetch('/ugyfel');
-              const data = await response.json();
-              displayCustomers(data);
-            });
-        
-            getSingleCustomerBtn.addEventListener('click', async () => {
-              const customerId = prompt('Add meg az ügyfél azonosítóját:');
-              if (customerId) {
-                const response = await fetch(`/ugyfel/${azon}`);
-                const data = await response.json();
-                displayCustomers([data]);
-              }
-            });
-        
-            newCustomerForm.addEventListener('submit', async (e) => {
-              e.preventDefault();
-              const formData = new FormData(newCustomerForm);
-              const azon = formData.get('azon');
-              const nev = formData.get('nev');
-              const szulev = formData.get('szulev');
-              const irszam = formData.get('irszam');
-              const orsz = formData.get('orsz');
-              
-              await fetch('/ugyfel', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, email }),
-              });
-        
-              // Frissítsük az összes ügyfél listáját
-              const allCustomersResponse = await fetch('/customers');
-              const allCustomersData = await allCustomersResponse.json();
-              displayCustomers(allCustomersData);
-            });
-        
-            // Ügyfelek megjelenítése
-            function displayCustomers(customers) {
-              let html = '<h2>Ügyfelek:</h2>';
-              html += '<ul>';
-              customers.forEach(customer => {
-                html += `<li>${customer.azon} - ${customer.nev}</li>`;
-              });
-              html += '</ul>';
-              customerDataDiv.innerHTML = html;
-            }
-          </script>
+  <div class="container">
+    <h1>User Management</h1>
+    <div class="buttons">
+      <button id="create">Create</button>
+      <button id="read">Read All</button>
+      <button id="update">Update</button>
+      <button id="delete">Delete</button>
     </div>
+    <div id="cards" class="card-container">
+      <!-- Cards will be displayed here -->
+    </div>
+    <form id="userDataForm">
+      <input type="hidden" id="id">
+      <input type="text" id="username" placeholder="Username">
+      <input type="number" id="darab" placeholder="Darab">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,56 +1,122 @@
-const mysql = require('mysql');
-const express = require('express');
-const app = express();
+const inputid = document.querySelector("#id");
+const inputUsername = document.querySelector("#username");
+const inputDarab = document.querySelector("#darab");
+const buttonCreate = document.querySelector('#create');
+const buttonRead = document.querySelector("#read");
+const buttonUpdate = document.querySelector('#update');
+const buttonDelete = document.querySelector('#delete');
+const body = document.getElementsByTagName("body")[0];
+const cards = document.querySelector("#cards");
 
-// MySQL adatbázis csatlakozás konfigurációja
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root', // A saját MySQL felhasználóneved
-  password: '', // A saját jelszavad
-  database: 'tagdij', // Az adatbázis neve, amiben dolgozol
+window.addEventListener("load", getAllUsers, false); //-- a lap betöltésekor is ...
+// -- buttonCreate.addEventListener("click", getAllUsers);
+
+async function getAllUsers() {
+    let endpoint = "https://retoolapi.dev/Hfa9uy/data";
+    try {
+        const response = await fetch(endpoint);
+        const users = await response.json();
+        showAllUsers(users);    
+    } catch (error) {
+        console.log(error);
+    }
+    
+}
+
+function showAllUsers(users){
+    let html = "";
+    users.forEach(user => {
+        html += `
+        <div class="card" style="width: 18rem;">
+        <img src="noimage.jpg" class="card-img-top" alt="noimage.jpg">
+        <div class="card-body">
+            <h5 class="card-title">${user.id}.${user.username}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+            <p class="card-text">Darab: ${user.darab}</p>
+            <button class="btn btn-primary" onclick="betoltInputMezobe(${user.id})">Kiválaszt</button>
+        </div>
+    </div>
+        `;
+    });
+    cards.innerHTML = html;
+}
+
+async function betoltInputMezobe(id) {
+    let url = `https://retoolapi.dev/Hfa9uy/data/${id}`;
+    try {
+        const response = await fetch(url);
+        const users = await response.json();
+        inputid.value = users.id;
+        inputUsername.value = users.username;
+        inputDarab.value = users.darab;
+        location.href = "#formEleje";
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// -- új user létrehozása ----------------------------------------------------------------
+buttonCreate.addEventListener("click", async () => {
+    let url = `https://retoolapi.dev/Hfa9uy/data`;
+    let data = {
+        username: inputUsername.value,
+        darab: inputDarab.value
+    };
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const user = await response.json();
+        beviteliMezoAlaphelyzetbe();
+        console.log(user);
+        getAllUsers();
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-// Adatbázis csatlakozás
-connection.connect((err) => {
-  if (err) {
-    console.error('Hiba a MySQL csatlakozás során: ' + err.stack);
-    return;
-  }
-  console.log('Sikeresen csatlakozva a MySQL-hez az azonosító: ' + connection.threadId);
+//-- user törlés ----------------------------------------------------------------
+buttonDelete.addEventListener("click", async () => {
+    let url = `https://retoolapi.dev/Hfa9uy/data/${inputid.value}`;
+    try {
+        const response = await fetch(url, {
+            method: "DELETE",
+        });
+        const user = await response.json();
+        beviteliMezoAlaphelyzetbe();
+        getAllUsers();
+        inputid.value = "";
+        inputUsername.value = "";
+        inputDarab.value = "1";
+    } catch (error) {
+        console.log(error);
+    }
 });
 
-// Új ügyfél hozzáadása
-app.post('/ugyfel', (req, res) => {
-  const { name, email } = req.body;
-  const INSERT_CUSTOMER_QUERY = `INSERT INTO ugyfel (azon, nev, szulev, irszam, orsz) VALUES (?, ?, ?, ?, ?)`;
-  connection.query(INSERT_CUSTOMER_QUERY, [azon, nev, szulev, irszam, orsz], (error, results, fields) => {
-    if (error) throw error;
-    res.send('Új ügyfél hozzáadva az adatbázishoz');
-  });
-});
-
-// Összes ügyfél lekérdezése
-app.get('/ugyfel', (req, res) => {
-  const SELECT_ALL_CUSTOMERS_QUERY = 'SELECT * FROM ugyfel';
-  connection.query(SELECT_ALL_CUSTOMERS_QUERY, (error, results, fields) => {
-    if (error) throw error;
-    res.json(results);
-  });
-});
-
-// Egy adott ügyfél lekérdezése
-app.get('/ugyfel/:azon', (req, res) => {
-  const { customerId } = req.params;
-  const SELECT_SINGLE_CUSTOMER_QUERY = 'SELECT * FROM ugyfel WHERE azon = ?';
-  connection.query(SELECT_SINGLE_CUSTOMER_QUERY, [azon], (error, results, fields) => {
-    if (error) throw error;
-    res.json(results[0]);
-  });
-});
-
-// Egyéb kezelések...
-
-// Szerver figyelése
-app.listen(3000, () => {
-  console.log('A szerver fut a 3000-es porton');
+//-- user update ----------------------------------------------------------------
+buttonUpdate.addEventListener("click", async () => {
+    let url = `https://retoolapi.dev/Hfa9uy/data/${inputid.value}`;
+    let data = {
+        username: inputUsername.value,
+        darab: inputDarab.value
+    };
+    try {
+        const response = await fetch(url, {
+            method: "PUT",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const user = await response.json();
+        beviteliMezoAlaphelyzetbe();
+        getAllUsers();
+    } catch (error) {
+        console.log(error);
+    }
 });
