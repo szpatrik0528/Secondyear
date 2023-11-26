@@ -1,0 +1,115 @@
+const inputid = document.querySelector("#id");
+const inputUsername = document.querySelector("#username");
+const inputDarab = document.querySelector("#darab");
+const buttonCreate = document.querySelector('#create');
+const buttonRead = document.querySelector("#read");
+const buttonUpdate = document.querySelector('#update');
+const buttonDelete = document.querySelector('#delete');
+const cards = document.querySelector("#cards");
+
+window.addEventListener("load", getAllUsers, false);
+
+async function getAllUsers() {
+    try {
+        const response = await fetch('/users');
+        const users = await response.json();
+        showAllUsers(users);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function showAllUsers(users) {
+    let html = "";
+    users.forEach(user => {
+        html += `
+        <div class="card" style="width: 18rem;">
+        <img src="noimage.jpg" class="card-img-top" alt="noimage.jpg">
+        <div class="card-body">
+            <h5 class="card-title">${user.id}.${user.username}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+            <p class="card-text">Darab: ${user.darab}</p>
+            <button class="btn btn-primary" onclick="betoltInputMezobe(${user.id})">Kiválaszt</button>
+        </div>
+    </div>
+        `;
+    });
+    cards.innerHTML = html;
+}
+
+async function betoltInputMezobe(id) {
+    let url = `/users/${id}`;
+    try {
+        const response = await fetch(url);
+        const user = await response.json();
+        inputid.value = user.id;
+        inputUsername.value = user.username;
+        inputDarab.value = user.darab;
+        // Valószínűleg itt inkább csak a formra kellene fókuszálni, a location.href nem feltétlenül szükséges
+        // location.href = "#formEleje";
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+buttonCreate.addEventListener("click", async () => {
+    let url = `/users`;
+    let data = {
+        username: inputUsername.value,
+        darab: inputDarab.value
+    };
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const newUser = await response.json();
+        console.log(newUser);
+        getAllUsers();
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+buttonDelete.addEventListener("click", async () => {
+    let url = `/users/${inputid.value}`;
+    try {
+        const response = await fetch(url, {
+            method: "DELETE",
+        });
+        const deletedUser = await response.json();
+        console.log(deletedUser);
+        getAllUsers();
+        inputid.value = "";
+        inputUsername.value = "";
+        inputDarab.value = "1";
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+buttonUpdate.addEventListener("click", async () => {
+    let url = `/users/${inputid.value}`;
+    let data = {
+        username: inputUsername.value,
+        darab: inputDarab.value
+    };
+    try {
+        const response = await fetch(url, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const updatedUser = await response.json();
+        console.log(updatedUser);
+        getAllUsers();
+    } catch (error) {
+        console.log(error);
+    }
+});
