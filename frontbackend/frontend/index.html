@@ -3,41 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>Ügyféladatok kezelése</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css"
+        integrity="sha512-72OVeAaPeV8n3BdZj7hOkaPSEk/uwpDkaGyP4W2jSzAC8tfiO4LMEDWoL3uFp5mcZu+8Eehb4GhZWFwvrss69Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./stlye.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.min.js"
+        integrity="sha512-eHx4nbBTkIr2i0m9SANm/cczPESd0DUEcfl84JpIuutE6oDxPhXvskMR08Wmvmfx5wUpVjlWdi82G5YLvqqJdA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
   <h1>Ügyféladatok kezelése</h1>
 
-  <!-- Ügyfelek táblázata -->
-  <table id="clients-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Név</th>
-        <th>Email</th>
-        <th>Telefonszám</th>
-        <th>Műveletek</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Ügyfelek adatai ide kerülnek AJAX-szal -->
-    </tbody>
-  </table>
-
-  <!-- Új ügyfél űrlapja -->
-  <div class="form-container">
-    <h2>Új ügyfél hozzáadása</h2>
-    <form id="add-client-form">
-      <input type="text" name="name" placeholder="Név" required><br>
-      <input type="email" name="email" placeholder="Email" required><br>
-      <input type="tel" name="phone" placeholder="Telefonszám" required><br>
-      <input type="submit" value="Hozzáadás">
-    </form>
+  <div class="container">
+    <div class="form-container">
+      <h2>Új ügyfél hozzáadása</h2>
+      <form id="add-client-form">
+        <input type="text" name="inputid" placeholder="id" required><br>
+        <input type="text" name="inputDarab" placeholder="Darab" required><br>
+        <input type="text" name="inputUsername" placeholder="Név" required><br>
+        <input type="submit" value="Hozzáadás">
+      </form>
+      <button id="fetchClientsButton" class="btn btn-primary" onclick="getAllUsers()">ügyfelek lekérdezése</button>
+    </div>
+    <table id="clients-table">
+      <thead>
+        <tr>
+          <th style="text-align:center">Darab</th>
+          <th style="text-align:center">Id</th>
+          <th style="text-align:center" >Név</th>
+          <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-warning m-1" id="create">CREATE</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-success m-1" id="update">UPDATE</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-danger m-1" id="delete">DELETE</button>
+            </div>
+          </div>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
   </div>
+  
 
-  <!-- Lekérdezés gomb -->
-  <button id="fetch-clients">Ügyfelek lekérése</button>
-
-  <!-- JavaScript fájl importálása AJAX kérésekhez -->
   <script src="main.js"></script>
 </body>
 </html>

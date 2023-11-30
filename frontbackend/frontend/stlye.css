@@ -43,3 +43,14 @@ th {
 .form-container input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+.container {
+    max-width: 20%;
+    margin: 0 auto; 
+}
+ 
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    gap: 5px; /* Adjust the space between buttons as needed */
+}
+  
